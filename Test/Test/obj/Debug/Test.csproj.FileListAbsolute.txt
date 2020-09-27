@@ -1,0 +1,15 @@
+C:\Users\gendo\source\repos\Test\Test\bin\Debug\Test.exe.config
+C:\Users\gendo\source\repos\Test\Test\bin\Debug\Test.exe
+C:\Users\gendo\source\repos\Test\Test\bin\Debug\Test.pdb
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\MainWindow.g.cs
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\App.g.cs
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test_MarkupCompile.cache
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test_MarkupCompile.lref
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\MainWindow.baml
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test.g.resources
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test.exe
+C:\Users\gendo\source\repos\Test\Test\obj\Debug\Test.pdb
