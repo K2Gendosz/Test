@@ -47,3 +47,5 @@ C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\Test.csproj.GenerateResourc
 C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\Test.exe
 C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\Test.pdb
+C:\Users\gendo\source\repos\Nowy\Test\Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\Test.csproj.CopyComplete
