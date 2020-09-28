@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Test
 {
     /// <summary>
@@ -27,18 +28,51 @@ namespace Test
 
         private void btnAddPage_Click(object sender, RoutedEventArgs e)
         {
-            int age = 0;
+            bool ageRedy = false;
+            bool txtBoxRedy = false;
+            bool sexRedy = false;
+            int tmpAge = 0;
             string var = txtBoxAge.Text;
-            if (!int.TryParse(var, out age)) textBoxInvalid(txtBoxAge);
-            else if (age < 0 || age > 100) textBoxInvalid(txtBoxAge);
-            else textboxValid(txtBoxAge);
-            if(checkIfNull(txtBoxName) || checkIfNull(txtBoxSurname) || checkIfNull(txtBoxCity) || checkIfNull(txtBoxStreet) || checkIfNull(txtBoxPostal))
+
+            if (!int.TryParse(var, out tmpAge) && tmpAge > 0 || tmpAge < 100)
+            {
+                textBoxInvalid(txtBoxAge);
+                ageRedy = false;
+            }
+            else
+            {
+                textboxValid(txtBoxAge);
+                ageRedy = true;
+            }
+
+            if (checkIfNull(txtBoxName) || checkIfNull(txtBoxSurname) || checkIfNull(txtBoxCity) 
+                || checkIfNull(txtBoxStreet) || checkIfNull(txtBoxPostal) || checkIfNull(txtBoxHouseNumber))
             {
                 MessageBox.Show("Invalid values in red colored boxes");
+                txtBoxRedy = false;
             }
-            if(string.IsNullOrEmpty(comboBoxSex.Text))
+            else txtBoxRedy = true;
+
+            if (string.IsNullOrEmpty(comboBoxSex.Text))
             {
                 MessageBox.Show("Please select sex");
+                sexRedy = false;
+            }
+            else sexRedy = true;
+
+            if(sexRedy && ageRedy && txtBoxRedy)
+            {
+                string name = txtBoxName.Text;
+                string surname = txtBoxSurname.Text;
+                string city = txtBoxCity.Text;
+                string postal = txtBoxPostal.Text;
+                string street = txtBoxStreet.Text;
+                string sex = comboBoxSex.Text;
+                string houseNumber = txtBoxHouseNumber.Text;
+                int age = int.Parse(txtBoxAge.Text);
+                
+                Model.Subscriber subscriber = new Model.Subscriber(name,surname,sex,city,postal,street,houseNumber,age);
+                Test.MainWindow.AddToList(subscriber);
             }
             //Test.MainWindow.AddToList(objekt); TU MOSZ FUNKCYJE ŁOD DODAWANIA STWORZONEGO ŁOBIEKTA DO LISTY NA  MAJN PAJDŻU
 
