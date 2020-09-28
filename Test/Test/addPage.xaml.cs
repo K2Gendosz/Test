@@ -32,6 +32,9 @@ namespace Test
             if (!int.TryParse(var, out age)) textBoxInvalid(txtBoxAge);
             else if (age < 0 || age > 100) textBoxInvalid(txtBoxAge);
             else textboxValid(txtBoxAge);
+
+            //Test.MainWindow.AddToList(objekt); TU MOSZ FUNKCYJE ŁOD DODAWANIA STWORZONEGO ŁOBIEKTA DO LISTY NA  MAJN PAJDŻU
+
         }
 
         private void textBoxInvalid(TextBox txtBox)
