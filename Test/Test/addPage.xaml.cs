@@ -32,7 +32,14 @@ namespace Test
             if (!int.TryParse(var, out age)) textBoxInvalid(txtBoxAge);
             else if (age < 0 || age > 100) textBoxInvalid(txtBoxAge);
             else textboxValid(txtBoxAge);
-
+            if(checkIfNull(txtBoxName) || checkIfNull(txtBoxSurname) || checkIfNull(txtBoxCity) || checkIfNull(txtBoxStreet) || checkIfNull(txtBoxPostal))
+            {
+                MessageBox.Show("Invalid values in red colored boxes");
+            }
+            if(string.IsNullOrEmpty(comboBoxSex.Text))
+            {
+                MessageBox.Show("Please select sex");
+            }
             //Test.MainWindow.AddToList(objekt); TU MOSZ FUNKCYJE ŁOD DODAWANIA STWORZONEGO ŁOBIEKTA DO LISTY NA  MAJN PAJDŻU
 
         }
@@ -49,7 +56,7 @@ namespace Test
 
         private bool checkIfNull(TextBox txtBox)
         {
-            if (String.IsNullOrEmpty(txtBox.Text))
+            if (String.IsNullOrEmpty(txtBox.Text) || txtBox.Text == "Invalid Value")
             {
                 textBoxInvalid(txtBox);
                 return true;
