@@ -21,36 +21,85 @@ namespace Test
     public partial class editPage : Page
     {
         List<Test.Model.Subscriber> SubscribersList;
-
+        Test.Model.Subscriber SelectedItem;
         public editPage(List<Test.Model.Subscriber> subscribersList)
         {
             InitializeComponent();
             this.SubscribersList = subscribersList;
-            foreach (var item in subscribersList)  // ładowanie z listy do ComboBoxa
-            {
-                comboBoxItem.Items.Add($"{item.FirstName} {item.SecondName} {item.StreetAddress}");
-            }
+            resetComboList();
+            
         }
 
         private void comboBoxItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // wyszukanie wybranego obiektu 
-            string[] items = comboBoxItem.SelectedItem.ToString().Split(' ');
-            foreach (var item in SubscribersList)
+            if (comboBoxItem.SelectedIndex != -1)
             {
-                if(item.FirstName == items[0] && item.SecondName == items[1] && item.StreetAddress == items[2])
+                string[] items = comboBoxItem.SelectedItem.ToString().Split(' ');
+                foreach (var item in SubscribersList)
                 {
-                    txtBoxName.Text = item.FirstName;
-                    txtBoxSurname.Text = item.SecondName;
-                    txtBoxAge.Text = item.Age.ToString();
-                    txtBoxCity.Text = item.City;
-                    txtBoxStreet.Text = item.StreetAddress;
-                    txtBoxHouse.Text = item.HouseNumber;
-                    txtBoxPostal.Text = item.PostalCode;
-                    comboBoxSex.SelectedItem = item.Sex;
+                    if (item.FirstName == items[0] && item.SecondName == items[1] && item.StreetAddress == items[2])
+                    {
+                        txtBoxName.Text = item.FirstName;
+                        txtBoxSurname.Text = item.SecondName;
+                        txtBoxAge.Text = item.Age.ToString();
+                        txtBoxCity.Text = item.City;
+                        txtBoxStreet.Text = item.StreetAddress;
+                        txtBoxHouse.Text = item.HouseNumber;
+                        txtBoxPostal.Text = item.PostalCode;
+                        switch (item.Sex)
+                        {
+                            case "Male":
+                                comboBoxSex.SelectedItem = male;
+                                break;
+                            case "Female":
+                                comboBoxSex.SelectedItem = female;
+                                break;
+                            default:
+                                break;
+                        }
+                        SelectedItem = item;
+                    }
                 }
             }
+            
+        }
 
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            // razem z walidacją ogarnąć :D 
+        }
+
+        private void btnDell_Click(object sender, RoutedEventArgs e)
+        {
+            if (SelectedItem!=null)
+            {
+                
+                
+                comboBoxItem.SelectedIndex = -1;
+                txtBoxName.Text = " ";
+                txtBoxSurname.Text = " ";
+                txtBoxAge.Text = " ";
+                txtBoxCity.Text = " ";
+                txtBoxStreet.Text = " ";
+                txtBoxHouse.Text = " ";
+                txtBoxPostal.Text = " ";
+                comboBoxSex.SelectedIndex = -1;
+                Model.Manager.RemoveFromList(SelectedItem);
+                resetComboList();
+                SelectedItem = null;
+
+            }
+            
+        }
+
+        private void resetComboList()
+        {
+            comboBoxItem.Items.Clear(); // czyszczenie listy 
+            foreach (var item in SubscribersList)  // ładowanie z listy do ComboBoxa
+            {
+                comboBoxItem.Items.Add($"{item.FirstName} {item.SecondName} {item.StreetAddress}");
+            }
         }
     }
 }
