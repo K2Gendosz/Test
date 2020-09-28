@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Test.Model
 {   [Serializable]
-    class Subscriber
+    public class Subscriber
     {
         private string firstName;
         private string secondName;

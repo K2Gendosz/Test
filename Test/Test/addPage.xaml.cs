@@ -32,10 +32,6 @@ namespace Test
             if (!int.TryParse(var, out age)) textBoxInvalid(txtBoxAge);
             else if (age < 0 || age > 100) textBoxInvalid(txtBoxAge);
             else textboxValid(txtBoxAge);
-            if(checkIfNull(txtBoxCity) || checkIfNull(txtBoxName) || checkIfNull(txtBoxPostal) || checkIfNull(txtBoxStreet) || checkIfNull(txtBoxSurname))
-            {
-                MessageBox.Show("In red boxes you have entered invalid values");
-            }
         }
 
         private void textBoxInvalid(TextBox txtBox)

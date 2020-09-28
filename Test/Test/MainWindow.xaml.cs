@@ -27,11 +27,11 @@ namespace Test
 
         public MainWindow()
         {
-            
+
             InitializeComponent();
             ReadFromFile();
 
-            
+
 
 
         }
@@ -40,8 +40,8 @@ namespace Test
         {
             if (File.Exists(@"SubscribersList.json"))
             {
-               string jsonStringContract = File.ReadAllText("SubscribersList.json");
-               SubscribersList = JsonConvert.DeserializeObject<List<Test.Model.Subscriber>>(jsonStringContract);
+                string jsonStringContract = File.ReadAllText("SubscribersList.json");
+                SubscribersList = JsonConvert.DeserializeObject<List<Test.Model.Subscriber>>(jsonStringContract);
             }
             else
             {
@@ -53,20 +53,25 @@ namespace Test
         public static void SaveToFile()
         {
 
-           
+
 
             if (File.Exists(@"SubscribersList.json"))
             {
                 File.Delete(@"SubscribersList.json");
             }
 
-            string jsonString = JsonConvert.SerializeObject(SubscribersList,Formatting.Indented);
-           
+            string jsonString = JsonConvert.SerializeObject(SubscribersList, Formatting.Indented);
+
             File.WriteAllText("SubscribersList.json", jsonString);
 
 
         }
-       
+
+        public void AddToList(Model.Subscriber obj)
+        {
+            SubscribersList.Add(obj);
+        }
+        
 
         private void Main_Navigated(object sender, NavigationEventArgs e)
         {
