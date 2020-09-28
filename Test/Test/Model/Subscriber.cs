@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Test.Model
-{
+{   [Serializable]
     class Subscriber
     {
         private string firstName;
@@ -29,5 +29,14 @@ namespace Test.Model
             this.houseNumber = houseNumber;
             this.age = age;
         }
+
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string SecondName { get => secondName; set => secondName = value; }
+        public string Sex { get => sex; set => sex = value; }
+        public string City { get => city; set => city = value; }
+        public string PostalCode { get => postalCode; set => postalCode = value; }
+        public string StreetAddress { get => streetAddress; set => streetAddress = value; }
+        public string HouseNumber { get => houseNumber; set => houseNumber = value; }
+        public int Age { get => age; set => age = value; }
     }
 }

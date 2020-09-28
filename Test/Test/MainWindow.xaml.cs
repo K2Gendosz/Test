@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System.IO;
 
 namespace Test
 {
@@ -20,14 +23,49 @@ namespace Test
     /// </summary>
     public partial class MainWindow : Window
     {
+        static List<Test.Model.Subscriber> SubscribersList;
+
         public MainWindow()
         {
-
-            InitializeComponent();
             
+            InitializeComponent();
+            ReadFromFile();
+
+            
+
+
         }
 
+        private static void ReadFromFile()
+        {
+            if (File.Exists(@"SubscribersList.json"))
+            {
+               string jsonStringContract = File.ReadAllText("SubscribersList.json");
+               SubscribersList = JsonConvert.DeserializeObject<List<Test.Model.Subscriber>>(jsonStringContract);
+            }
+            else
+            {
+                File.Create("SubscribersList.json");
+                SubscribersList = new List<Model.Subscriber>();
+            }
+        }
 
+        public static void SaveToFile()
+        {
+
+           
+
+            if (File.Exists(@"SubscribersList.json"))
+            {
+                File.Delete(@"SubscribersList.json");
+            }
+
+            string jsonString = JsonConvert.SerializeObject(SubscribersList,Formatting.Indented);
+           
+            File.WriteAllText("SubscribersList.json", jsonString);
+
+
+        }
        
 
         private void Main_Navigated(object sender, NavigationEventArgs e)
