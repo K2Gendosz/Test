@@ -9,13 +9,22 @@
       Title="addPage">
 
     <Grid Background="White" Margin="0,0,0,0">
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="317,346,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="317,403,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="480,346,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="480,403,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ListBox HorizontalAlignment="Left" Height="22" Margin="625,347,0,0" VerticalAlignment="Top" Width="101">
-            <ListBoxItem Content="Male"/>
-            <ListBoxItem Content="Female"/>
-        </ListBox>
+
+        <Grid HorizontalAlignment="Left" Height="169" Margin="257,137,0,0" VerticalAlignment="Top" Width="448">
+            <ListBox HorizontalAlignment="Left" Height="22" Margin="615,342,0,0" VerticalAlignment="Top" Width="101">
+                <ListBoxItem Content="Male"/>
+                <ListBoxItem Content="Female"/>
+            </ListBox>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="34,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <ComboBox HorizontalAlignment="Left" Margin="328,68,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Background="{x:Null}" Content="Male" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ComboBoxItem Background="{x:Null}" Content="Female" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ComboBox>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="34,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="34,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="193,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="193,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="193,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        </Grid>
     </Grid>
 </Page>
