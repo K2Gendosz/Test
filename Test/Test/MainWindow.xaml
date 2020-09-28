@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
+        
         Title="SubApp" Height="450" Width="800" BorderBrush="Black" Background="White">
     <Grid Margin="10">
         <Frame x:Name="Main" Background="#FF70A9EE" Margin="180,0,0,0" NavigationUIVisibility="Hidden"/>
