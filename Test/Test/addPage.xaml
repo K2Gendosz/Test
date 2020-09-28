@@ -21,7 +21,7 @@
                 <ComboBoxItem Background="{x:Null}" Content="Female" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </ComboBox>
             <TextBox x:Name="txtBoxAge" HorizontalAlignment="Left" Height="23" Margin="34,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtBoxName" HorizontalAlignment="Left" Height="23" Margin="34,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1"/>
+            <TextBox x:Name="txtBoxName" HorizontalAlignment="Left" Height="23" Margin="34,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
             <TextBox x:Name="txtBoxCity" HorizontalAlignment="Left" Height="23" Margin="193,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="txtBoxPostal" HorizontalAlignment="Left" Height="23" Margin="193,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="txtBoxStreet" HorizontalAlignment="Left" Height="23" Margin="193,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>

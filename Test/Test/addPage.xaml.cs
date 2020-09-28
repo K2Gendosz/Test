@@ -28,7 +28,10 @@ namespace Test
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             int age = 0;
-            if(int.TryParse(txtBoxAge.Text,age))
+            if (int.TryParse(txtBoxAge.Text, out age))
+            { 
+                
+            };
         }
     }
 }
