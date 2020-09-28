@@ -6,31 +6,13 @@
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
         Title="SubApp" Height="450" Width="800" BorderBrush="Black" Background="White">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="4*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-        <Grid Background="#FF485EB7" Grid.Column="0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*" ></RowDefinition>
-                    <RowDefinition Height="8*"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Border BorderBrush="Black" BorderThickness="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1"></Border>
-                <Label Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"> SUBSCRIBERS APP</Label>
-                
-                
-            
+    <Grid Margin="10">
+        <Frame x:Name="Main" Background="#FF70A9EE"/>
+        <Grid Margin="0,10,592,0">
+            <Grid HorizontalAlignment="Left" Height="393" VerticalAlignment="Top" Width="180" Background="#FF619EE8">
+                <Label Content="Subscribers App" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF529CF5" VerticalAlignment="Top"/>
+                <Button x:Name="btnAdd" Content="Add" Margin="52,256,54,111" VerticalAlignment="Center" Width="73" Height="26" Click="btnAdd_Click"/>
             </Grid>
         </Grid>
-
-        <Grid Grid.Column="1"/>
-
     </Grid>
-
-
 </Window>

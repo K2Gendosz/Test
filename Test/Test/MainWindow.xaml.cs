@@ -22,7 +22,24 @@ namespace Test
     {
         public MainWindow()
         {
+
             InitializeComponent();
+            
+        }
+
+
+       
+
+        private void Main_Navigated(object sender, NavigationEventArgs e)
+        {
+            Main.Content = new addPage();
+        }
+
+       
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new addPage();
         }
     }
 }
