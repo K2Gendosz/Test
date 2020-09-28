@@ -32,6 +32,8 @@ namespace Test
             if (!int.TryParse(var, out age)) textBoxInvalid(txtBoxAge);
             else if (age < 0 || age > 100) textBoxInvalid(txtBoxAge);
             else textboxValid(txtBoxAge);
+
+            //Test.MainWindow.AddToList(  TUKEJ WSTAW ŁOBIEKT KTURY MOSZ DODAĆ DO LISTA W MAJNIE JEST FUNKCYJA KTURA TO ŁOGARNIA I POWINNO BYĆ GIT  );
         }
 
         private void textBoxInvalid(TextBox txtBox)

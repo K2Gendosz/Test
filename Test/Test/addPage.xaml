@@ -10,6 +10,7 @@
 
     <Grid Background="White" Margin="0,0,0,0">
         <Grid Height="274" Margin="296,49,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="272">
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="35*"/>
                 <RowDefinition Height="35*"/>
@@ -43,7 +44,7 @@
             <Label Content="Sex" HorizontalAlignment="Center" Margin="0" Grid.Row="6" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,-3,0" Height="23" Width="18"/>
             <Button x:Name="btnAddPage" Content="Add" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120" Click="btnAddPage_Click" Height="23" Grid.Row="7" Grid.Column="1" Padding="0"/>
         </Grid>
-
+        
 
     </Grid>
 </Page>
