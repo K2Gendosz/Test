@@ -25,13 +25,33 @@ namespace Test
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnAddPage_Click(object sender, RoutedEventArgs e)
         {
             int age = 0;
-            if (int.TryParse(txtBoxAge.Text,out age))
-            {
-                this.txtBoxAge.Background = Brushes.Red;
-            }
+            string var = txtBoxAge.Text;
+            if (!int.TryParse(var, out age)) textBoxInvalid(txtBoxAge);
+            else if (age < 0 || age > 100) textBoxInvalid(txtBoxAge);
+            else textboxValid(txtBoxAge);
+        }
+
+        private void textBoxInvalid(TextBox txtBox)
+        {
+            txtBox.Text = "Invalid Value";
+            txtBox.Background = Brushes.Red;
+        }
+        private void textboxValid(TextBox txtBox)
+        {
+            txtBox.Background = Brushes.White;
+        }
+
+        private void txtBoxSurname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void txtBoxAge_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
