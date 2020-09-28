@@ -9,11 +9,13 @@
         
         Title="SubApp" Height="450" Width="800" BorderBrush="Black" Background="White">
     <Grid Margin="10">
-        <Frame x:Name="Main" Background="#FF70A9EE" Margin="180,0,0,0" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="Main" Background="#FF70A9EE" Margin="180,0,0,0" NavigationUIVisibility="Hidden" Width="594"/>
         <Grid Margin="0,10,592,0">
             <Grid HorizontalAlignment="Left" Height="404" VerticalAlignment="Top" Width="180" Background="#FF619EE8" Margin="0,-11,0,0">
                 <Label Content="Subscribers App" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF529CF5" VerticalAlignment="Top"/>
                 <Button x:Name="btnAdd" Content="Add" Margin="52,256,54,111" VerticalAlignment="Center" Width="73" Height="26" Click="btnAdd_Click"/>
+                <Button x:Name="btnChange" Content="Change" Margin="52,292,54,86" VerticalAlignment="Center" Width="73" Height="26" Click="BtnChange" />
+
             </Grid>
         </Grid>
     </Grid>

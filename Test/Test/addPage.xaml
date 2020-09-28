@@ -45,7 +45,7 @@
             <Label Content="Sex" HorizontalAlignment="Center" Margin="34,4,45,4" Grid.Row="7" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,-3,0" Height="24" Width="18"/>
             <Button x:Name="btnAddPage" Content="Add" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120" Click="btnAddPage_Click" Height="24" Grid.Row="8" Grid.Column="1" Padding="0"/>
             <Label Content="House number" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Grid.Row="6" Height="26" Width="99"/>
-            <TextBox x:Name="txtBoxHouseNumber" HorizontalAlignment="Center" Height="23" Margin="39,6,38,3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="6"/>
+            <TextBox x:Name="txtBoxHouse" HorizontalAlignment="Center" Height="23" Margin="39,6,38,3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="6"/>
         </Grid>
 
 

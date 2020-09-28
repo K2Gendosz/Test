@@ -67,11 +67,16 @@ namespace Test
 
         }
 
-        public void AddToList(Model.Subscriber obj)
+        public static void AddToList(Model.Subscriber obj)
         {
             SubscribersList.Add(obj);
         }
-        
+
+        public static void RemoveFromList(Model.Subscriber Obj)
+        {
+            SubscribersList.Remove(Obj);
+        }
+
 
         private void Main_Navigated(object sender, NavigationEventArgs e)
         {
@@ -83,6 +88,11 @@ namespace Test
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new addPage();
+        }
+
+        private void BtnChange(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new editPage(SubscribersList);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Test
             int tmpAge = 0;
             string var = txtBoxAge.Text;
 
-            if (!int.TryParse(var, out tmpAge) && tmpAge > 0 || tmpAge < 100)
+            if (!int.TryParse(var, out tmpAge) ||  tmpAge <= 0 || tmpAge > 100)  // warunek zmieniłem nie przepuszczał przy age == 20 nwm może ten && blokował
             {
                 textBoxInvalid(txtBoxAge);
                 ageRedy = false;
@@ -46,7 +46,7 @@ namespace Test
             }
 
             if (checkIfNull(txtBoxName) || checkIfNull(txtBoxSurname) || checkIfNull(txtBoxCity) 
-                || checkIfNull(txtBoxStreet) || checkIfNull(txtBoxPostal) || checkIfNull(txtBoxHouseNumber))
+                || checkIfNull(txtBoxStreet) || checkIfNull(txtBoxPostal) || checkIfNull(txtBoxHouse))
             {
                 MessageBox.Show("Invalid values in red colored boxes");
                 txtBoxRedy = false;
@@ -68,13 +68,25 @@ namespace Test
                 string postal = txtBoxPostal.Text;
                 string street = txtBoxStreet.Text;
                 string sex = comboBoxSex.Text;
-                string houseNumber = txtBoxHouseNumber.Text;
+                string houseNumber = txtBoxHouse.Text; // zmieniłem nazwe na txtBoxHouse bo mi wywalało że niema może za długie chu* wie 
                 int age = int.Parse(txtBoxAge.Text);
                 
                 Model.Subscriber subscriber = new Model.Subscriber(name,surname,sex,city,postal,street,houseNumber,age);
-                Test.MainWindow.AddToList(subscriber);
+                Test.Model.Manager.AddSubToList(subscriber);
+
+                txtBoxName.Text = "";
+                txtBoxSurname.Text = "";
+                txtBoxCity.Text = "";
+                txtBoxPostal.Text = "";   // czyszczenie po dodaniu Suba do listy 
+                txtBoxStreet.Text = "";
+                comboBoxSex.SelectedIndex = -1;
+                txtBoxHouse.Text = "";
+                txtBoxAge.Text = "";
+
+                
+
             }
-            //Test.MainWindow.AddToList(objekt); TU MOSZ FUNKCYJE ŁOD DODAWANIA STWORZONEGO ŁOBIEKTA DO LISTY NA  MAJN PAJDŻU
+            
 
         }
 
