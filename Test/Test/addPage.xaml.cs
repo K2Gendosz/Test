@@ -25,9 +25,10 @@ namespace Test
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            int age = 0;
+            if(int.TryParse(txtBoxAge.Text,age))
         }
     }
 }
