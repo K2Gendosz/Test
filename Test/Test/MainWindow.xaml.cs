@@ -37,7 +37,7 @@ namespace Test
 
 
         }
-
+        //Czytanie i save jeszcze do ogarnięcia
         private static void ReadFromFile()
         {
             if (File.Exists(@"SubscribersList.json"))

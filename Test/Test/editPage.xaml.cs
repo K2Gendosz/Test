@@ -82,10 +82,11 @@ namespace Test
         {
             if (SelectedItem!=null)
             {
-
+                //Usuwa po indexie, było najprościej
                 int removeIndex = comboBoxItem.SelectedIndex;
                 MainWindow.RemoveFromList(removeIndex);
 
+                //Znowu ulepszone czyszczenie textBoxow
                 foreach (Control ctl in formContainer.Children)
                 {
                     if (ctl.GetType() == typeof(TextBox))
