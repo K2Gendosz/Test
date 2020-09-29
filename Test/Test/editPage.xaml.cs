@@ -45,10 +45,10 @@ namespace Test
             if (comboBoxItem.SelectedIndex != -1)
             {
                 int id = comboBoxItem.SelectedIndex;
-                
+
                 foreach (var item in SubscribersList)
                 {
-                    if (SubscribersList.IndexOf(item) == id)
+                    if (SubscribersList.IndexOf(item) == id) // zmienilem na ywszukiwanie po ID
                     {
                         txtBoxName.Text = item.FirstName;
                         txtBoxSurname.Text = item.SecondName;
@@ -111,7 +111,7 @@ namespace Test
         {
             foreach (var item in subList)
             {
-                comboBoxItem.Items.Add($"{subList.IndexOf(item)+1}. {item.FirstName} {item.SecondName}");
+                comboBoxItem.Items.Add($"{subList.IndexOf(item) + 1}. {item.FirstName} {item.SecondName}");
             }
         }
     }
