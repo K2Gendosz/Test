@@ -44,10 +44,11 @@ namespace Test
             // wyszukanie wybranego obiektu 
             if (comboBoxItem.SelectedIndex != -1)
             {
-                string[] items = comboBoxItem.SelectedItem.ToString().Split(' ');
+                int id = comboBoxItem.SelectedIndex;
+                
                 foreach (var item in SubscribersList)
                 {
-                    if (item.FirstName == items[0] && item.SecondName == items[1] && item.Age.ToString() == items[2])
+                    if (SubscribersList.IndexOf(item) == id)
                     {
                         txtBoxName.Text = item.FirstName;
                         txtBoxSurname.Text = item.SecondName;
@@ -110,7 +111,7 @@ namespace Test
         {
             foreach (var item in subList)
             {
-                comboBoxItem.Items.Add($"{item.FirstName} {item.SecondName} {item.Age}");
+                comboBoxItem.Items.Add($"{subList.IndexOf(item)+1}. {item.FirstName} {item.SecondName}");
             }
         }
     }
