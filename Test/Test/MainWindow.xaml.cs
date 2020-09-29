@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.IO;
+using Test.Model;
 
 namespace Test
 {
@@ -23,14 +24,15 @@ namespace Test
     /// </summary>
     public partial class MainWindow : Window
     {
-        static List<Test.Model.Subscriber> SubscribersList;
+       static Manager manager = new Manager();
+        //    static List<Test.Model.Subscriber> SubscribersList;
 
         public MainWindow()
         {
 
             InitializeComponent();
             ReadFromFile();
-
+            
 
 
 
@@ -41,12 +43,12 @@ namespace Test
             if (File.Exists(@"SubscribersList.json"))
             {
                 string jsonStringContract = File.ReadAllText("SubscribersList.json");
-                SubscribersList = JsonConvert.DeserializeObject<List<Test.Model.Subscriber>>(jsonStringContract);
+               // SubscribersList = JsonConvert.DeserializeObject<List<Test.Model.Subscriber>>(jsonStringContract);
             }
             else
             {
                 File.Create("SubscribersList.json");
-                SubscribersList = new List<Model.Subscriber>();
+              //  SubscribersList = new List<Model.Subscriber>();
             }
         }
 
@@ -60,21 +62,23 @@ namespace Test
                 File.Delete(@"SubscribersList.json");
             }
 
-            string jsonString = JsonConvert.SerializeObject(SubscribersList, Formatting.Indented);
+           // string jsonString = JsonConvert.SerializeObject(SubscribersList, Formatting.Indented);
 
-            File.WriteAllText("SubscribersList.json", jsonString);
+           // File.WriteAllText("SubscribersList.json", jsonString);
 
 
         }
 
-        public static void AddToList(Model.Subscriber obj)
+        public static void AddToList(Subscriber obj)
         {
-            SubscribersList.Add(obj);
+            manager.AddSubToList(obj);
+            //SubscribersList.Add(obj);
         }
 
-        public static void RemoveFromList(Model.Subscriber Obj)
+        public static void RemoveFromList(int index)
         {
-            SubscribersList.Remove(Obj);
+            manager.RemoveFromList(index);
+            //SubscribersList.Remove(Obj);
         }
 
 
@@ -92,7 +96,8 @@ namespace Test
 
         private void BtnChange(object sender, RoutedEventArgs e)
         {
-            Main.Content = new editPage(SubscribersList);
+            List < Subscriber > subList = manager.getSubscribersList();
+            Main.Content = new editPage(subList);
         }
     }
 }

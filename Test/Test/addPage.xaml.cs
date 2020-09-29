@@ -72,23 +72,28 @@ namespace Test
                 int age = int.Parse(txtBoxAge.Text);
                 
                 Model.Subscriber subscriber = new Model.Subscriber(name,surname,sex,city,postal,street,houseNumber,age);
-                Test.Model.Manager.AddSubToList(subscriber);
+                MainWindow.AddToList(subscriber);
+                //Model.Manager.AddSubToList(subscriber);
 
-                txtBoxName.Text = "";
-                txtBoxSurname.Text = "";
-                txtBoxCity.Text = "";
-                txtBoxPostal.Text = "";   // czyszczenie po dodaniu Suba do listy 
-                txtBoxStreet.Text = "";
+                //Prostsze czyszczenie textboxow
+                foreach(Control ctl in formContainer.Children)
+                {
+                    if (ctl.GetType() == typeof(TextBox))
+                        ((TextBox)ctl).Text = string.Empty;
+                }
                 comboBoxSex.SelectedIndex = -1;
-                txtBoxHouse.Text = "";
-                txtBoxAge.Text = "";
-
-                
+                //txtBoxName.Text = "";
+                //txtBoxSurname.Text = "";
+                //txtBoxCity.Text = "";
+                //txtBoxPostal.Text = "";   // czyszczenie po dodaniu Suba do listy 
+                //txtBoxStreet.Text = "";
+                //txtBoxHouse.Text = "";
+                //txtBoxAge.Text = "";
 
             }
-            
 
         }
+       
 
         private void textBoxInvalid(TextBox txtBox)
         {

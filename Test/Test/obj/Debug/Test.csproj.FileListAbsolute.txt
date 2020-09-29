@@ -53,3 +53,5 @@ C:\Users\Myszków\Source\Repos\K2Gendosz\Test\Test\Test\bin\Debug\Newtonsoft.Jso
 C:\Users\Myszków\Source\Repos\K2Gendosz\Test\Test\Test\obj\Debug\Test.csproj.CopyComplete
 C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\editPage.g.cs
 C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\editPage.baml
+C:\Users\Myszków\source\repos\K2Gendosz\Test\Test\Test\obj\Debug\editPage.g.cs
+C:\Users\Myszków\source\repos\K2Gendosz\Test\Test\Test\obj\Debug\editPage.baml

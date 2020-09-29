@@ -9,7 +9,7 @@
       Title="editPage">
 
     <Grid Background="White" Margin="0,0,0,0">
-        <Grid Height="300"  Width="306" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Name="formContainer" Height="300"  Width="306" HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="35*"/>
@@ -24,47 +24,47 @@
                 <RowDefinition Height="34*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="97*"/>
-                <ColumnDefinition Width="175*"/>
+                <ColumnDefinition Width="121*"/>
+                <ColumnDefinition Width="185*"/>
             </Grid.ColumnDefinitions>
-            
-            
-            
+
+
+
             <!--Select Item-->
-            <Label Content="Select Item" Height="22" Margin="20,6,30,5"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Grid.Row="0"/>
-            <ComboBox x:Name="comboBoxItem" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120" Height="24" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" SelectionChanged="comboBoxItem_SelectionChanged">
-                
+            <Label Content="Select Item" Margin="0"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Grid.Row="0"/>
+            <ComboBox x:Name="comboBoxItem" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120" Height="23" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" SelectionChanged="comboBoxItem_SelectionChanged">
+
             </ComboBox>
             <!--Name-->
-            <TextBox x:Name="txtBoxName" Grid.Column="1" HorizontalAlignment="Center" Height="20" Margin="0,6,0,5" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Grid.Row="1"/>
-            <Label Content="Name" Height="23" Margin="22,6,33,5" Width="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Grid.Row="1"/>
+            <TextBox x:Name="txtBoxName" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Grid.Row="1"/>
+            <Label Content="Name" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Grid.Row="1"/>
             <!--Surname-->
-            <TextBox x:Name="txtBoxSurname" Grid.Column="1" HorizontalAlignment="Center" Height="20" Margin="0,5,0,6" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
-            <Label Content="Surname" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="24" Padding="0" VerticalContentAlignment="Center" Margin="20,5,31,4" Grid.Row="2" Width="46"/>
+            <TextBox x:Name="txtBoxSurname" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+            <Label Content="Surname" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" Margin="0" Grid.Row="2"/>
             <!--Age-->
             <TextBox x:Name="txtBoxAge" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
-            <Label Content="Age" HorizontalAlignment="Center" VerticalAlignment="Center" Height="23" Width="54" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Margin="16,5,27,5" Grid.Row="3"/>
+            <Label Content="Age" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Margin="0" Grid.Row="3"/>
             <!--City -->
             <TextBox x:Name="txtBoxCity" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" BorderThickness="1" Padding="0" UseLayoutRounding="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Content="City" Height="23" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Width="50" Margin="18,5,29,5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4"/>
+            <Label Content="City" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Margin="0" Grid.Row="4"/>
             <!--Street-->
-            <Label Content="Street" HorizontalAlignment="Center" VerticalAlignment="Center" Height="23" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="50" Margin="18,4,29,4" Grid.Row="5"/>
+            <Label Content="Street" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0" Grid.Row="5"/>
             <TextBox x:Name="txtBoxStreet" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <!--House Number-->
-            <Label Content="House number" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Grid.Row="6" Height="26" Width="99"/>
-            <TextBox x:Name="txtBoxHouse" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="21" Margin="39,6,38,3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="6"/>
+            <Label Content="House number" Margin="0" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtBoxHouse" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="23" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="6"/>
             <!--Postal-->
             <TextBox x:Name="txtBoxPostal" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="0" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Label Content="Postal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Width="52" Margin="18,5,27,4" Grid.Row="7"/>
+            <Label Content="Postal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Margin="0" Grid.Row="7"/>
             <!--Sex-->
-            <ComboBox x:Name="comboBoxSex" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120" Height="24" Grid.Column="1" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0">
+            <ComboBox x:Name="comboBoxSex" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120" Height="23" Grid.Column="1" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0">
                 <ComboBoxItem Background="{x:Null}" Name="male" Content="Male" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <ComboBoxItem Background="{x:Null}" Name="female" Content="Female" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </ComboBox>
-            <Label Content="Sex" HorizontalAlignment="Center" Margin="34,4,45,4" Grid.Row="8" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,-3,0" Height="24" Width="18"/>
-            
+            <Label Content="Sex" Margin="0" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,-3,0"/>
+
             <!--Btn-->
-            <Button x:Name="btnEdit" Content="Save Changes" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120"  Height="24" Grid.Row="9" Grid.Column="1" Padding="0" Click="btnEdit_Click"/>
+            <Button x:Name="btnEdit" Content="Save Changes" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120"  Height="23" Grid.Row="9" Grid.Column="1" Padding="0" Click="btnEdit_Click"/>
             <Button x:Name="btnDell" Content="Delete Item" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120"  Height="24" Grid.Row="9" Grid.Column="0" Padding="0" Click="btnDell_Click"/>
 
         </Grid>

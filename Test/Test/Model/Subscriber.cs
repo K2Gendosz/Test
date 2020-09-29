@@ -20,14 +20,15 @@ namespace Test.Model
         public Subscriber(string firstName, string secondName, string sex, string city, 
             string postalCode, string streetAddress, string houseNumber, int age)
         {
-            this.firstName = firstName;
-            this.secondName = secondName;
-            this.sex = sex;
-            this.city = city;
-            this.postalCode = postalCode;
-            this.streetAddress = streetAddress;
-            this.houseNumber = houseNumber;
-            this.age = age;
+            
+            this.FirstName = firstName;
+            this.SecondName = secondName;
+            this.Sex = sex;
+            this.City = city;
+            this.PostalCode = postalCode;
+            this.StreetAddress = streetAddress;
+            this.HouseNumber = houseNumber;
+            this.Age = age;
         }
 
         public string FirstName { get => firstName; set => firstName = value; }

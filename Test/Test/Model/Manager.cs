@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 
 namespace Test.Model
 {
-   public static class Manager  
+   public class Manager  
     {
-        
+         List<Subscriber> SubscribersList = new List<Subscriber>();
 
-        public static void AddSubToList(Model.Subscriber Obj)
+        public void AddSubToList(Subscriber Obj)
         {
-            Test.MainWindow.AddToList(Obj);
+            SubscribersList.Add(Obj);
+            //Test.MainWindow.AddToList(Obj);
         }
 
-        public static void RemoveFromList(Model.Subscriber Obj)
+        public void RemoveFromList(int index)
         {
-            Test.MainWindow.RemoveFromList(Obj);
+            SubscribersList.RemoveAt(index);
+           // Test.MainWindow.RemoveFromList(Obj);
+        }
+
+        public List<Subscriber> getSubscribersList()
+        {
+            return this.SubscribersList;
         }
 
         public static void EditSub(Model.Subscriber Obj)

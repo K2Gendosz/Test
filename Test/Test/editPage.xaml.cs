@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Test.Model;
 
 namespace Test
 {
@@ -20,16 +21,24 @@ namespace Test
     /// </summary>
     public partial class editPage : Page
     {
-        List<Test.Model.Subscriber> SubscribersList;
-        Test.Model.Subscriber SelectedItem;
-        public editPage(List<Test.Model.Subscriber> subscribersList)
+        List<Subscriber> SubscribersList;
+        Subscriber SelectedItem;
+        //public editPage(List<Test.Model.Subscriber> subscribersList)
+        //{
+        //    InitializeComponent();
+        //    this.SubscribersList = subscribersList;
+        //    resetComboList();
+            
+        //}
+
+        public editPage(List<Subscriber> subList)
         {
             InitializeComponent();
-            this.SubscribersList = subscribersList;
+            this.SubscribersList = subList;
             resetComboList();
-            
         }
 
+        //Wypełnia dane z wybranego elementu listy
         private void comboBoxItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // wyszukanie wybranego obiektu 
@@ -62,7 +71,6 @@ namespace Test
                     }
                 }
             }
-            
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
@@ -74,18 +82,27 @@ namespace Test
         {
             if (SelectedItem!=null)
             {
-                
-                
-                comboBoxItem.SelectedIndex = -1;
-                txtBoxName.Text = " ";
-                txtBoxSurname.Text = " ";
-                txtBoxAge.Text = " ";
-                txtBoxCity.Text = " ";
-                txtBoxStreet.Text = " ";
-                txtBoxHouse.Text = " ";
-                txtBoxPostal.Text = " ";
+
+                int removeIndex = comboBoxItem.SelectedIndex;
+                MainWindow.RemoveFromList(removeIndex);
+
+                foreach (Control ctl in formContainer.Children)
+                {
+                    if (ctl.GetType() == typeof(TextBox))
+                        ((TextBox)ctl).Text = string.Empty;
+                }
                 comboBoxSex.SelectedIndex = -1;
-                Model.Manager.RemoveFromList(SelectedItem);
+                comboBoxItem.SelectedIndex = -1;
+                
+                //txtBoxName.Text = " ";
+                //txtBoxSurname.Text = " ";
+                //txtBoxAge.Text = " ";
+                //txtBoxCity.Text = " ";
+                //txtBoxStreet.Text = " ";
+                //txtBoxHouse.Text = " ";
+                //txtBoxPostal.Text = " ";
+                //comboBoxSex.SelectedIndex = -1;
+               // Model.Manager.RemoveFromList(SelectedItem);
                 resetComboList();
                 SelectedItem = null;
 
