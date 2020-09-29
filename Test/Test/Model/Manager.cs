@@ -13,18 +13,16 @@ namespace Test.Model
         public void AddSubToList(Subscriber Obj)
         {
             SubscribersList.Add(Obj);
-            //Test.MainWindow.AddToList(Obj);
         }
 
         public void RemoveFromList(int index)
         {
             SubscribersList.RemoveAt(index);
-           // Test.MainWindow.RemoveFromList(Obj);
         }
 
         public List<Subscriber> getSubscribersList()
         {
-            return this.SubscribersList;
+            return SubscribersList;
         }
 
         public static void EditSub(Model.Subscriber Obj)

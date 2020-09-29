@@ -21,8 +21,8 @@ namespace Test
     /// </summary>
     public partial class editPage : Page
     {
-        List<Subscriber> SubscribersList = MainWindow.getManagerSubList();
-        Subscriber SelectedItem;
+        List<Subscriber> SubscribersList;
+        private Subscriber SelectedItem;
         //public editPage(List<Test.Model.Subscriber> subscribersList)
         //{
         //    InitializeComponent();
@@ -95,20 +95,9 @@ namespace Test
                 comboBoxSex.SelectedIndex = -1;
                 comboBoxItem.SelectedIndex = -1;
 
-                //txtBoxName.Text = " ";
-                //txtBoxSurname.Text = " ";
-                //txtBoxAge.Text = " ";
-                //txtBoxCity.Text = " ";
-                //txtBoxStreet.Text = " ";
-                //txtBoxHouse.Text = " ";
-                //txtBoxPostal.Text = " ";
-                //comboBoxSex.SelectedIndex = -1;
-                // Model.Manager.RemoveFromList(SelectedItem);
                 resetAndReloadComboList(MainWindow.getManagerSubList());
                 SelectedItem = null;
-
             }
-
         }
 
         private void resetAndReloadComboList(List<Subscriber> subList)

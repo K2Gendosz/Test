@@ -31,7 +31,7 @@ namespace Test
             bool ageRedy = false;
             bool txtBoxRedy = false;
             bool sexRedy = false;
-            int tmpAge = 0;
+            int tmpAge;
             string var = txtBoxAge.Text;
 
             if (!int.TryParse(var, out tmpAge) ||  tmpAge <= 0 || tmpAge > 100)  // warunek zmieniłem nie przepuszczał przy age == 20 nwm może ten && blokował
@@ -82,24 +82,15 @@ namespace Test
                         ((TextBox)ctl).Text = string.Empty;
                 }
                 comboBoxSex.SelectedIndex = -1;
-                //txtBoxName.Text = "";
-                //txtBoxSurname.Text = "";
-                //txtBoxCity.Text = "";
-                //txtBoxPostal.Text = "";   // czyszczenie po dodaniu Suba do listy 
-                //txtBoxStreet.Text = "";
-                //txtBoxHouse.Text = "";
-                //txtBoxAge.Text = "";
-
             }
-
         }
-       
 
         private void textBoxInvalid(TextBox txtBox)
         {
             txtBox.Text = "Invalid Value";
             txtBox.Background = Brushes.Red;
         }
+
         private void textboxValid(TextBox txtBox)
         {
             txtBox.Background = Brushes.White;
