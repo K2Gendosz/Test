@@ -9,7 +9,7 @@
         
         Title="SubApp" Height="450" Width="800" BorderBrush="Black" Background="White">
     <Grid Margin="10">
-        <Frame x:Name="Main" Background="#FF70A9EE" Margin="180,0,0,0" NavigationUIVisibility="Hidden" Width="594"/>
+        <Frame x:Name="Main" Background="#FF386ECD" Margin="180,0,0,0" NavigationUIVisibility="Hidden" Width="594"/>
         <Label Margin="147,191,312,128" FontSize="56" RenderTransformOrigin="1,1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe Script" Width="313" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="84">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -31,8 +31,22 @@
             </Label.RenderTransform> TO JE ŁĄTERMARK
         </Label>
         <Grid Margin="0,10,592,0">
-            <Grid HorizontalAlignment="Left" Height="404" VerticalAlignment="Top" Width="180" Background="#FF619EE8" Margin="0,-11,0,0">
-                <Label Content="MENJU" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF529CF5" VerticalAlignment="Top"/>
+            <Grid HorizontalAlignment="Left" Height="404" VerticalAlignment="Top" Width="180" Margin="0,-11,0,0">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0957FF"/>
+                        <GradientStop Color="#FF113581" Offset="1"/>
+                        <GradientStop Color="#FF1C93E5" Offset="0.554"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Label Content="MENJU" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF30ECEC"/>
+                            <GradientStop Color="#FF0D63FA" Offset="0.777"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
                 <Button x:Name="btnAdd" Content="Add" Margin="52,6,54,111" VerticalAlignment="Center" Width="73" Height="26" Click="btnAdd_Click"/>
                 <Button x:Name="btnChange" Content="Change" Margin="52,42,54,86" VerticalAlignment="Center" Width="73" Height="26" Click="BtnChange" />
 

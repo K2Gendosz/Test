@@ -21,21 +21,21 @@ namespace Test
     /// </summary>
     public partial class editPage : Page
     {
-        List<Subscriber> SubscribersList;
+        List<Subscriber> SubscribersList = MainWindow.getManagerSubList();
         Subscriber SelectedItem;
         //public editPage(List<Test.Model.Subscriber> subscribersList)
         //{
         //    InitializeComponent();
         //    this.SubscribersList = subscribersList;
         //    resetComboList();
-            
+
         //}
 
         public editPage(List<Subscriber> subList)
         {
             InitializeComponent();
             this.SubscribersList = subList;
-            resetComboList();
+            resetAndReloadComboList(subList);
         }
 
         //Wypełnia dane z wybranego elementu listy
@@ -47,7 +47,7 @@ namespace Test
                 string[] items = comboBoxItem.SelectedItem.ToString().Split(' ');
                 foreach (var item in SubscribersList)
                 {
-                    if (item.FirstName == items[0] && item.SecondName == items[1] && item.StreetAddress == items[2])
+                    if (item.FirstName == items[0] && item.SecondName == items[1] && item.Age.ToString() == items[2])
                     {
                         txtBoxName.Text = item.FirstName;
                         txtBoxSurname.Text = item.SecondName;
@@ -80,7 +80,7 @@ namespace Test
 
         private void btnDell_Click(object sender, RoutedEventArgs e)
         {
-            if (SelectedItem!=null)
+            if (SelectedItem != null)
             {
                 //Usuwa po indexie, było najprościej
                 int removeIndex = comboBoxItem.SelectedIndex;
@@ -94,7 +94,7 @@ namespace Test
                 }
                 comboBoxSex.SelectedIndex = -1;
                 comboBoxItem.SelectedIndex = -1;
-                
+
                 //txtBoxName.Text = " ";
                 //txtBoxSurname.Text = " ";
                 //txtBoxAge.Text = " ";
@@ -103,20 +103,25 @@ namespace Test
                 //txtBoxHouse.Text = " ";
                 //txtBoxPostal.Text = " ";
                 //comboBoxSex.SelectedIndex = -1;
-               // Model.Manager.RemoveFromList(SelectedItem);
-                resetComboList();
+                // Model.Manager.RemoveFromList(SelectedItem);
+                resetAndReloadComboList(MainWindow.getManagerSubList());
                 SelectedItem = null;
 
             }
-            
+
         }
 
-        private void resetComboList()
+        private void resetAndReloadComboList(List<Subscriber> subList)
         {
             comboBoxItem.Items.Clear(); // czyszczenie listy 
-            foreach (var item in SubscribersList)  // ładowanie z listy do ComboBoxa
+            loadSubscribers(subList);
+        }
+
+        private void loadSubscribers(List<Subscriber> subList)
+        {
+            foreach (var item in subList)
             {
-                comboBoxItem.Items.Add($"{item.FirstName} {item.SecondName} {item.StreetAddress}");
+                comboBoxItem.Items.Add($"{item.FirstName} {item.SecondName} {item.Age}");
             }
         }
     }

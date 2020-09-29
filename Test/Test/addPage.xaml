@@ -8,8 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="addPage">
 
-    <Grid Background="White" Margin="0,0,0,0">
-        <Grid Name="formContainer" Height="292" Margin="262,49,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="238">
+    <Grid Background="#FF386ECD" Margin="0,0,0,0">
+        <!--Form grid-->
+        <Grid Name="formContainer" Height="292" Margin="262,49,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="282">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="35*"/>
@@ -26,26 +27,36 @@
                 <ColumnDefinition Width="86*"/>
                 <ColumnDefinition Width="127*" MinWidth="120"/>
             </Grid.ColumnDefinitions>
-            <Label Content="City" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Margin="0" Grid.Row="3"/>
-            <TextBox x:Name="txtBoxName" Grid.Column="1" Height="22" Margin="12,6,-5,5" TextWrapping="Wrap" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            
+            <!--NAME-->
+            <TextBox x:Name="txtBoxName" Grid.Column="1" Height="22" Margin="12,6,-5,5" TextWrapping="Wrap" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" VerticalAlignment="Center"/>
             <Label Content="Name" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
-            <TextBox x:Name="txtBoxSurname" Grid.Column="1" HorizontalAlignment="Center" Height="22" Margin="12,5,-5,6" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+            <!--surname-->
+            <TextBox x:Name="txtBoxSurname" Grid.Column="1" Height="22" Margin="12,5,-5,6" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
             <Label Content="Surname" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" Margin="0" Grid.Row="1"/>
-            <TextBox x:Name="txtBoxAge" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="12,5,-5,5" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+            <!--age-->
+            <TextBox x:Name="txtBoxAge" Grid.Column="1" Height="23" Margin="12,5,-5,5" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
             <Label Content="Age" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Margin="0" Grid.Row="2"/>
-            <TextBox x:Name="txtBoxCity" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="12,5,-5,5" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" BorderThickness="1" Padding="0" UseLayoutRounding="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <!--city-->
+            <TextBox x:Name="txtBoxCity" Grid.Column="1" Height="23" Margin="12,5,-5,5" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" BorderThickness="1" Padding="0" UseLayoutRounding="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="City" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Margin="0" Grid.Row="3"/>
+            <!--street-->
             <Label Content="Street" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0" Grid.Row="4"/>
-            <TextBox x:Name="txtBoxStreet" Grid.Column="1" HorizontalAlignment="Center" Height="24" Margin="12,4,-5,4" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="txtBoxPostal" Grid.Column="1" HorizontalAlignment="Center" Height="24" Margin="12,4,-5,4" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="txtBoxStreet" Grid.Column="1" Height="24" Margin="12,4,-5,4" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <!--postal-->
+            <TextBox x:Name="txtBoxPostal" Grid.Column="1" Height="24" Margin="12,4,-5,4" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Label Content="Postal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Margin="0" Grid.Row="5"/>
-            <ComboBox x:Name="comboBoxSex" HorizontalAlignment="Center" Margin="12,4,-5,4" VerticalAlignment="Center" Width="120" Height="24" Grid.Column="1" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0">
+            <!--sex-->
+            <ComboBox x:Name="comboBoxSex" Margin="12,4,-5,4" VerticalAlignment="Center" Width="120" Height="24" Grid.Column="1" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0">
                 <ComboBoxItem Background="{x:Null}" Content="Male" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <ComboBoxItem Background="{x:Null}" Content="Female" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </ComboBox>
             <Label Content="Sex" Margin="0" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,-3,0"/>
-            <Button x:Name="btnAddPage" Content="Add" HorizontalAlignment="Center" Margin="12,4,-5,4" VerticalAlignment="Center" Width="120" Click="btnAddPage_Click" Height="24" Grid.Row="8" Grid.Column="1" Padding="0"/>
+            <!--button-->
+            <Button x:Name="btnAddPage" Content="Add" Margin="12,4,-5,4" VerticalAlignment="Center" Width="120" Click="btnAddPage_Click" Height="24" Grid.Row="8" Grid.Column="1" Padding="0"/>
+            <!--house-->
             <Label Content="House number" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <TextBox x:Name="txtBoxHouse" HorizontalAlignment="Center" Height="24" Margin="12,4,-5,4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="6"/>
+            <TextBox x:Name="txtBoxHouse" Height="24" Margin="12,4,-5,4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
         </Grid>
 
 

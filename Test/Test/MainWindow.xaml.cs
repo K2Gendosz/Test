@@ -87,6 +87,11 @@ namespace Test
             Main.Content = new addPage();
         }
 
+        public static List<Subscriber> getManagerSubList()
+        {
+            List<Subscriber> actualList = manager.getSubscribersList();
+            return actualList;
+        }
        
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
