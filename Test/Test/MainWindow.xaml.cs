@@ -78,7 +78,11 @@ namespace Test
         public static void RemoveFromList(int index)
         {
             manager.RemoveFromList(index);
-            //SubscribersList.Remove(Obj);
+        }
+
+        public static void EditFromList(int index, Subscriber sub)
+        {
+            manager.EditSub(index, sub);
         }
 
 

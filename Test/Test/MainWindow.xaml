@@ -10,22 +10,22 @@
         Title="SubApp" Height="450" Width="800" BorderBrush="Black" Background="White">
     <Grid Margin="10">
         <Frame x:Name="Main" Background="#FF386ECD" Margin="180,0,0,0" NavigationUIVisibility="Hidden" Width="594"/>
-        <Label Margin="147,191,312,128" FontSize="56" RenderTransformOrigin="1,1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe Script" Width="313" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="84">
+        <Label Margin="179,6,319,302" FontSize="56" RenderTransformOrigin="1,1" FontFamily="Segoe Script" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,2,0">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="35.853"/>
+                    <RotateTransform Angle="1.326"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Label.RenderTransform> JESTĘ GRAFIKĘ
         </Label>
-        <Label Margin="250,296,195,8" FontSize="56" RenderTransformOrigin="1,1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe Script" Width="327" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+        <Label Margin="184,116,304,188" FontSize="56" RenderTransformOrigin="1,1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe Script" Width="284" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="17.341"/>
+                    <RotateTransform Angle="4.239"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Label.RenderTransform> TO JE ŁĄTERMARK

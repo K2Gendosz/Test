@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Test.Model
 {
-   public class Manager  
+    public class Manager
     {
-         List<Subscriber> SubscribersList = new List<Subscriber>();
+        List<Subscriber> SubscribersList = new List<Subscriber>();
 
         public void AddSubToList(Subscriber Obj)
         {
@@ -25,10 +25,10 @@ namespace Test.Model
             return SubscribersList;
         }
 
-        public static void EditSub(Model.Subscriber Obj)
-        { 
-        
-        
+        public void EditSub(int index, Subscriber obj)
+        {
+            SubscribersList[index] = obj;
+
         }
 
 

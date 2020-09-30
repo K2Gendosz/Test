@@ -76,7 +76,64 @@ namespace Test
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            // razem z walidacją ogarnąć :D 
+
+
+            if (validateEditForm())
+            {
+                Subscriber newSubscrober;
+                string name = txtBoxName.Text;
+                string surname = txtBoxSurname.Text;
+                string age = txtBoxAge.Text;
+                string city = txtBoxCity.Text;
+                string street = txtBoxStreet.Text;
+                string postal = txtBoxPostal.Text;
+                string sex = comboBoxSex.SelectedItem.ToString();
+                string houseNumber = txtBoxHouse.Text;
+                newSubscrober = new Subscriber(name, surname, sex, city, postal, street, houseNumber, int.Parse(age));
+                MainWindow.EditFromList(comboBoxItem.SelectedIndex, newSubscrober);
+            }
+            else
+            {
+                MessageBox.Show("You have to fill fields");
+            }
+        }
+
+        private bool validateEditForm()
+        {
+            bool isValidated = true;
+            int age;
+            if (comboBoxItem.SelectedIndex == -1)
+            {
+                MessageBox.Show("Subscriber to edit not selected");
+                return false;
+            }
+            else
+            {
+
+
+                foreach (Control tbForm in formContainer.Children)
+                {
+                    if (tbForm.GetType() == typeof(TextBox))
+                    {
+                        if (string.IsNullOrEmpty(((TextBox)tbForm).Text))
+                        {
+                            ((TextBox)tbForm).Background = Brushes.Red;
+                            isValidated = false;
+                        }
+                        else
+                        {
+                            ((TextBox)tbForm).Background = Brushes.White;
+
+                        }
+                    }
+                }
+                if (!int.TryParse(txtBoxAge.Text, out age) && age < 0 || age > 100)
+                {
+                    txtBoxAge.Background = Brushes.Red;
+                    isValidated = false;
+                }
+                return isValidated;
+            }
         }
 
         private void btnDell_Click(object sender, RoutedEventArgs e)
