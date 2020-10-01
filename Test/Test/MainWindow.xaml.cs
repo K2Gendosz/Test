@@ -24,55 +24,45 @@ namespace Test
     /// </summary>
     public partial class MainWindow : Window
     {
-       static Manager manager = new Manager();
-        //    static List<Test.Model.Subscriber> SubscribersList;
+        static Manager manager = new Manager();
 
         public MainWindow()
         {
 
             InitializeComponent();
             ReadFromFile();
-            
-
-
-
         }
-        //Czytanie i save jeszcze do ogarnięcia
+        //NIe testowane
         private static void ReadFromFile()
         {
             if (File.Exists(@"SubscribersList.json"))
             {
                 string jsonStringContract = File.ReadAllText("SubscribersList.json");
-               // SubscribersList = JsonConvert.DeserializeObject<List<Test.Model.Subscriber>>(jsonStringContract);
+                manager.setSubscriberList(JsonConvert.DeserializeObject<List<Subscriber>>(jsonStringContract));
             }
             else
             {
                 File.Create("SubscribersList.json");
-              //  SubscribersList = new List<Model.Subscriber>();
+                manager.setSubscriberList(new List<Subscriber>());
             }
         }
-
+        //Nie testowane
         public static void SaveToFile()
         {
-
-
 
             if (File.Exists(@"SubscribersList.json"))
             {
                 File.Delete(@"SubscribersList.json");
             }
 
-           // string jsonString = JsonConvert.SerializeObject(SubscribersList, Formatting.Indented);
+            string jsonString = JsonConvert.SerializeObject(manager.getSubscribersList(), Formatting.Indented);
 
-           // File.WriteAllText("SubscribersList.json", jsonString);
-
-
+            File.WriteAllText("SubscribersList.json", jsonString);
         }
 
         public static void AddToList(Subscriber obj)
         {
             manager.AddSubToList(obj);
-            //SubscribersList.Add(obj);
         }
 
         public static void RemoveFromList(int index)
@@ -85,7 +75,6 @@ namespace Test
             manager.EditSub(index, sub);
         }
 
-
         private void Main_Navigated(object sender, NavigationEventArgs e)
         {
             Main.Content = new addPage();
@@ -96,7 +85,6 @@ namespace Test
             List<Subscriber> actualList = manager.getSubscribersList();
             return actualList;
         }
-       
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -105,8 +93,14 @@ namespace Test
 
         private void BtnChange(object sender, RoutedEventArgs e)
         {
-            List < Subscriber > subList = manager.getSubscribersList();
+            List<Subscriber> subList = manager.getSubscribersList();
             Main.Content = new editPage(subList);
+        }
+
+        private void btnShow_Click(object sender, RoutedEventArgs e)
+        {
+
+            Main.Content = new showPage();
         }
     }
 }

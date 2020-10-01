@@ -28,7 +28,12 @@ namespace Test.Model
         public void EditSub(int index, Subscriber obj)
         {
             SubscribersList[index] = obj;
+        }
 
+        public void setSubscriberList(List<Subscriber> newSubList)
+        {
+            SubscribersList.Clear();
+            this.SubscribersList = newSubList;
         }
 
 
