@@ -108,5 +108,11 @@ namespace Test
             List < Subscriber > subList = manager.getSubscribersList();
             Main.Content = new editPage(subList);
         }
+
+        private void btnShow_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Main.Content = new showPage();
+        }
     }
 }

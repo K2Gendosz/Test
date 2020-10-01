@@ -55,3 +55,5 @@ C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\editPage.g.cs
 C:\Users\gendo\source\repos\Nowy\Test\Test\obj\Debug\editPage.baml
 C:\Users\Myszków\source\repos\K2Gendosz\Test\Test\Test\obj\Debug\editPage.g.cs
 C:\Users\Myszków\source\repos\K2Gendosz\Test\Test\Test\obj\Debug\editPage.baml
+C:\Users\Myszków\source\repos\K2Gendosz\Test\Test\Test\obj\Debug\showPage.g.cs
+C:\Users\Myszków\source\repos\K2Gendosz\Test\Test\Test\obj\Debug\showPage.baml
