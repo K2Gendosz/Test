@@ -87,7 +87,7 @@ namespace Test
                 string city = txtBoxCity.Text;
                 string street = txtBoxStreet.Text;
                 string postal = txtBoxPostal.Text;
-                string sex = comboBoxSex.SelectedItem.ToString();
+                string sex = comboBoxSex.Text;
                 string houseNumber = txtBoxHouse.Text;
                 newSubscrober = new Subscriber(name, surname, sex, city, postal, street, houseNumber, int.Parse(age));
                 MainWindow.EditFromList(comboBoxItem.SelectedIndex, newSubscrober);
