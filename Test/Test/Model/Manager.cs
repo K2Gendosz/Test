@@ -32,6 +32,7 @@ namespace Test.Model
 
         public void setSubscriberList(List<Subscriber> newSubList)
         {
+            SubscribersList.Clear();
             this.SubscribersList = newSubList;
         }
 
