@@ -25,19 +25,14 @@ namespace Test
     public partial class MainWindow : Window
     {
         static Manager manager = new Manager();
-        //    static List<Test.Model.Subscriber> SubscribersList;
 
         public MainWindow()
         {
 
             InitializeComponent();
             ReadFromFile();
-
-
-
-
         }
-        //Czytanie i save jeszcze do ogarnięcia
+        //NIe testowane
         private static void ReadFromFile()
         {
             if (File.Exists(@"SubscribersList.json"))
@@ -51,11 +46,9 @@ namespace Test
                 manager.setSubscriberList(new List<Subscriber>());
             }
         }
-
+        //Nie testowane
         public static void SaveToFile()
         {
-
-
 
             if (File.Exists(@"SubscribersList.json"))
             {
@@ -65,8 +58,6 @@ namespace Test
             string jsonString = JsonConvert.SerializeObject(manager.getSubscribersList(), Formatting.Indented);
 
             File.WriteAllText("SubscribersList.json", jsonString);
-
-
         }
 
         public static void AddToList(Subscriber obj)
@@ -84,7 +75,6 @@ namespace Test
             manager.EditSub(index, sub);
         }
 
-
         private void Main_Navigated(object sender, NavigationEventArgs e)
         {
             Main.Content = new addPage();
@@ -95,7 +85,6 @@ namespace Test
             List<Subscriber> actualList = manager.getSubscribersList();
             return actualList;
         }
-
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
