@@ -24,7 +24,7 @@ namespace Test
     /// </summary>
     public partial class MainWindow : Window
     {
-       static Manager manager = new Manager();
+        static Manager manager = new Manager();
         //    static List<Test.Model.Subscriber> SubscribersList;
 
         public MainWindow()
@@ -32,7 +32,7 @@ namespace Test
 
             InitializeComponent();
             ReadFromFile();
-            
+
 
 
 
@@ -43,12 +43,12 @@ namespace Test
             if (File.Exists(@"SubscribersList.json"))
             {
                 string jsonStringContract = File.ReadAllText("SubscribersList.json");
-               // SubscribersList = JsonConvert.DeserializeObject<List<Test.Model.Subscriber>>(jsonStringContract);
+                manager.setSubscriberList(JsonConvert.DeserializeObject<List<Subscriber>>(jsonStringContract));
             }
             else
             {
                 File.Create("SubscribersList.json");
-              //  SubscribersList = new List<Model.Subscriber>();
+                manager.setSubscriberList(new List<Subscriber>());
             }
         }
 
@@ -62,9 +62,9 @@ namespace Test
                 File.Delete(@"SubscribersList.json");
             }
 
-           // string jsonString = JsonConvert.SerializeObject(SubscribersList, Formatting.Indented);
+            string jsonString = JsonConvert.SerializeObject(manager.getSubscribersList(), Formatting.Indented);
 
-           // File.WriteAllText("SubscribersList.json", jsonString);
+            File.WriteAllText("SubscribersList.json", jsonString);
 
 
         }
@@ -72,7 +72,6 @@ namespace Test
         public static void AddToList(Subscriber obj)
         {
             manager.AddSubToList(obj);
-            //SubscribersList.Add(obj);
         }
 
         public static void RemoveFromList(int index)
@@ -96,7 +95,7 @@ namespace Test
             List<Subscriber> actualList = manager.getSubscribersList();
             return actualList;
         }
-       
+
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -105,13 +104,13 @@ namespace Test
 
         private void BtnChange(object sender, RoutedEventArgs e)
         {
-            List < Subscriber > subList = manager.getSubscribersList();
+            List<Subscriber> subList = manager.getSubscribersList();
             Main.Content = new editPage(subList);
         }
 
         private void btnShow_Click(object sender, RoutedEventArgs e)
         {
-            
+
             Main.Content = new showPage();
         }
     }
