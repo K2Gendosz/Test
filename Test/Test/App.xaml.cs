@@ -16,10 +16,11 @@ namespace Test
     {
         private void Application_Exit(object sender, ExitEventArgs e)
         {
+            
             Test.MainWindow.SaveToFile();
+           
         }
 
-
-
+       
     }
 }

@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Test"
              StartupUri="MainWindow.xaml"
              Exit="Application_Exit">
+    
             
     <Application.Resources>
          

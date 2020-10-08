@@ -4,54 +4,80 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
-        
         mc:Ignorable="d"
+        Title="SubApp" Height="450" Width="800" BorderBrush="Black" Background="White" ResizeMode="NoResize" BorderThickness="1" WindowStyle="None" Padding="0" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+        WindowStartupLocation="CenterScreen"
+        >
+    
+    <Grid>
         
-        Title="SubApp" Height="450" Width="800" BorderBrush="Black" Background="White">
-    <Grid Margin="10">
-        <Frame x:Name="Main" Background="#FF386ECD" Margin="180,0,0,0" NavigationUIVisibility="Hidden" Width="594"/>
-        <Label Margin="179,6,319,302" FontSize="56" RenderTransformOrigin="1,1" FontFamily="Segoe Script" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,2,0">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="1.326"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform> JESTĘ GRAFIKĘ
-        </Label>
-        <Label Margin="184,116,304,188" FontSize="56" RenderTransformOrigin="1,1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe Script" Width="284" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="4.239"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform> TO JE ŁĄTERMARK
-        </Label>
-        <Grid Margin="0,10,592,0">
-            <Grid HorizontalAlignment="Left" Height="404" VerticalAlignment="Top" Width="180" Margin="0,-11,0,0">
-                <Grid.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FF0957FF"/>
-                        <GradientStop Color="#FF113581" Offset="1"/>
-                        <GradientStop Color="#FF1C93E5" Offset="0.554"/>
-                    </LinearGradientBrush>
-                </Grid.Background>
-                <Label Content="MENJU" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF30ECEC"/>
-                            <GradientStop Color="#FF0D63FA" Offset="0.777"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Button x:Name="btnAdd" Content="Add" Margin="52,6,54,111" VerticalAlignment="Center" Width="73" Height="26" Click="btnAdd_Click"/>
-                <Button x:Name="btnChange" Content="Change" Margin="52,42,54,86" VerticalAlignment="Center" Width="73" Height="26" Click="BtnChange" />
-                <Button x:Name="btnShow" Content="Show List" HorizontalAlignment="Left" Margin="50,198,0,0" VerticalAlignment="Top" Width="76" Click="btnShow_Click"/>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF456BEE">
 
-            </Grid>
+            <Label Foreground="White" FontSize="18" VerticalAlignment="Center">MiniProject APP</Label>
+            <Button x:Name="Minimalize" Width="30" Height="29"  Margin="0,0,35,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="25"  HorizontalAlignment="Right" FontFamily="MV Boli" Padding="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Minimalize_Click" MouseEnter="Minimalize_MouseEnter" MouseLeave="Minimalize_MouseLeave"  >
+
+                <Label Name="minimalizeLabel" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.258,0.172" ScrollViewer.VerticalScrollBarVisibility="Disabled" FlowDirection="RightToLeft" Padding="0" Width="46" Height="35" FontFamily="Nirmala UI Semilight" Background="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,8">-</Label>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
+
+            </Button>
+            
+            <Button x:Name="Exit" Width="30" Height="29"  Margin="0,0,5,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="25"  HorizontalAlignment="Right" FontFamily="MV Boli" Padding="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Exit_Click" MouseEnter="exitLabel_MouseEnter" MouseLeave="exitLabel_MouseLeave"  >
+
+                <Label Name="exitLabel" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.258,0.172" ScrollViewer.VerticalScrollBarVisibility="Disabled" FlowDirection="RightToLeft" Padding="0" Width="46" Height="35" FontFamily="Nirmala UI Semilight" Background="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,8">x</Label>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
+
+            </Button>
         </Grid>
+        <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Frame x:Name="ContentFrame" Width="800" HorizontalAlignment="Center" NavigationUIVisibility="Hidden">
+                
+            </Frame>
+        </Grid>
+
+       
+
     </Grid>
+
 </Window>

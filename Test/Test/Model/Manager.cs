@@ -9,15 +9,17 @@ namespace Test.Model
     public class Manager
     {
         List<Subscriber> SubscribersList = new List<Subscriber>();
+       
 
         public void AddSubToList(Subscriber Obj)
         {
             SubscribersList.Add(Obj);
         }
 
-        public void RemoveFromList(int index)
+        public void RemoveFromList(Subscriber sub)
         {
-            SubscribersList.RemoveAt(index);
+            SubscribersList.Remove(sub);
+            MainWindow.BackToList();
         }
 
         public List<Subscriber> getSubscribersList()
@@ -36,7 +38,63 @@ namespace Test.Model
             this.SubscribersList = newSubList;
         }
 
+        public List<Subscriber> Search(string text)
+        {
+            if (text != "Search" || text != "")
+            {
+                List<Subscriber> FoundSubs = new List<Subscriber>();
+                foreach (Subscriber item in SubscribersList)
+                {
 
+                    if (item.FirstName.ToUpper().Contains(text.ToUpper()))
+                    {
+                        FoundSubs.Add(item);
+                        continue;
+                    }
+                    else if (item.SecondName.ToUpper().Contains(text.ToUpper()))
+                    {
+                        FoundSubs.Add(item);
+                        continue;
+                    }
+
+                    else if (item.City.ToUpper().Contains(text.ToUpper()))
+                    {
+                        FoundSubs.Add(item);
+                        continue;
+                    }
+                    else if (item.PostalCode.ToUpper().Contains(text.ToUpper()))
+                    {
+                        FoundSubs.Add(item);
+                        continue;
+                    }
+                    else if (item.StreetAddress.ToUpper().Contains(text.ToUpper()))
+                    {
+                        FoundSubs.Add(item);
+                        continue;
+                    }
+                    else if (item.Sex.ToUpper() == text.ToUpper())
+                    {
+                        FoundSubs.Add(item);
+                        continue;
+                    }
+                    else if (item.HouseNumber.ToUpper().Contains(text.ToUpper()))
+                    {
+                        FoundSubs.Add(item);
+                        continue;
+                    }
+                    else if (item.Age.ToString().Contains(text))
+                    {
+                        FoundSubs.Add(item);
+                        continue;
+                    }
+
+
+                }
+                return FoundSubs;
+            }
+            return SubscribersList;
+        }
 
     }
 }
+            

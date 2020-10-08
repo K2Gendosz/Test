@@ -19,20 +19,30 @@ using Test.Model;
 
 namespace Test
 {
+    // Przerobione a w zasadzie całe napisane od nowa :D
+
+
+
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        static Manager manager = new Manager();
+        public static Manager manager = new Manager();
+        static showPage ShowPage = new showPage();
+        static object thisWindow; 
 
         public MainWindow()
         {
 
             InitializeComponent();
             ReadFromFile();
+
+            ContentFrame.Content = ShowPage;
+            thisWindow = this;
         }
-        //NIe testowane
+
+       //testowane
         private static void ReadFromFile()
         {
             if (File.Exists(@"SubscribersList.json"))
@@ -46,7 +56,7 @@ namespace Test
                 manager.setSubscriberList(new List<Subscriber>());
             }
         }
-        //Nie testowane
+        //testowane
         public static void SaveToFile()
         {
 
@@ -65,9 +75,9 @@ namespace Test
             manager.AddSubToList(obj);
         }
 
-        public static void RemoveFromList(int index)
+        public static void RemoveFromList(Subscriber sub)
         {
-            manager.RemoveFromList(index);
+            
         }
 
         public static void EditFromList(int index, Subscriber sub)
@@ -77,7 +87,7 @@ namespace Test
 
         private void Main_Navigated(object sender, NavigationEventArgs e)
         {
-            Main.Content = new addPage();
+            //Main.Content = new addPage();
         }
 
         public static List<Subscriber> getManagerSubList()
@@ -86,21 +96,56 @@ namespace Test
             return actualList;
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new addPage();
+            Application.Current.Shutdown();
         }
 
-        private void BtnChange(object sender, RoutedEventArgs e)
+        private void exitLabel_MouseEnter(object sender, MouseEventArgs e)
         {
-            List<Subscriber> subList = manager.getSubscribersList();
-            Main.Content = new editPage(subList);
+            
+            exitLabel.Foreground = new SolidColorBrush(Color.FromRgb(255,0,0));
         }
 
-        private void btnShow_Click(object sender, RoutedEventArgs e)
+        private void exitLabel_MouseLeave(object sender, MouseEventArgs e)
         {
-
-            Main.Content = new showPage();
+            
+            exitLabel.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
         }
+
+        
+
+        private void Minimalize_MouseEnter(object sender, MouseEventArgs e)
+        {
+           minimalizeLabel.Foreground = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+        }
+
+        private void Minimalize_MouseLeave(object sender, MouseEventArgs e)
+        {
+            minimalizeLabel.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        }
+
+        private void Minimalize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        static public void BackToList()
+        {
+            (thisWindow as MainWindow).ContentFrame.Content = new showPage();
+        }
+        static public void OpenAddPage()
+        {
+            (thisWindow as MainWindow).ContentFrame.Content = new addPage();
+        }
+
+        static public void OpenEditPage(Subscriber sub)
+        {
+            (thisWindow as MainWindow).ContentFrame.Content = new editPage(sub);
+        }
+
+
     }
 }
+
+

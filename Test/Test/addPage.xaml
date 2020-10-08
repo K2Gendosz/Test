@@ -5,59 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Test"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="407" d:DesignWidth="798"
       Title="addPage">
 
-    <Grid Background="#FF386ECD" Margin="0,0,0,0">
-        <!--Form grid-->
-        <Grid Name="formContainer" Height="292" Margin="262,49,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="282">
+    <Grid Background="White">
+        <Label x:Name="PersonalLb" Content="Personal info : " HorizontalAlignment="Left" Margin="235,101,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FirstName" Text="FirstName" HorizontalAlignment="Left" Height="23" Margin="234,132,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
+        <TextBox x:Name="SecondName" Text="SecondName" HorizontalAlignment="Left" Height="23" Margin="234,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
+        <TextBox x:Name="Age" Text="Age" HorizontalAlignment="Left" Height="23" Margin="234,207,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="235,244,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem IsSelected="True">Male</ComboBoxItem>
+            <ComboBoxItem>Female</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="AdresInfo" Content="Adres Info : " HorizontalAlignment="Left" Margin="431,101,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="City" Text="City" HorizontalAlignment="Left" Height="23" Margin="430,132,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
+        <TextBox x:Name="Postal" Text="Postal" HorizontalAlignment="Left" Height="23" Margin="430,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
+        <TextBox x:Name="Street" Text="Street" HorizontalAlignment="Left" Height="23" Margin="430,207,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
+        <TextBox x:Name="HouseNumber" Text="HouseNumber" HorizontalAlignment="Left" Height="23" Margin="430,244,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="235,302,0,0" VerticalAlignment="Top" Width="120" Click="Save_Click"/>
+        <Button x:Name="Back" Content="Back to list" HorizontalAlignment="Left" Margin="431,302,0,0" VerticalAlignment="Top" Width="120" Click="Back_Click"/>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="34*"/>
-                <RowDefinition Height="34*"/>
-                <RowDefinition Height="34*"/>
-                <RowDefinition Height="34*"/>
-                <RowDefinition Height="34*"/>
-                <RowDefinition Height="34*"/>
-                <RowDefinition Height="34*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="86*"/>
-                <ColumnDefinition Width="127*" MinWidth="120"/>
-            </Grid.ColumnDefinitions>
-            
-            <!--NAME-->
-            <TextBox x:Name="txtBoxName" Grid.Column="1" Height="22" Margin="12,6,-5,5" TextWrapping="Wrap" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" VerticalAlignment="Center"/>
-            <Label Content="Name" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
-            <!--surname-->
-            <TextBox x:Name="txtBoxSurname" Grid.Column="1" Height="22" Margin="12,5,-5,6" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
-            <Label Content="Surname" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" Margin="0" Grid.Row="1"/>
-            <!--age-->
-            <TextBox x:Name="txtBoxAge" Grid.Column="1" Height="23" Margin="12,5,-5,5" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
-            <Label Content="Age" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Margin="0" Grid.Row="2"/>
-            <!--city-->
-            <TextBox x:Name="txtBoxCity" Grid.Column="1" Height="23" Margin="12,5,-5,5" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" BorderThickness="1" Padding="0" UseLayoutRounding="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Content="City" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Margin="0" Grid.Row="3"/>
-            <!--street-->
-            <Label Content="Street" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0" Grid.Row="4"/>
-            <TextBox x:Name="txtBoxStreet" Grid.Column="1" Height="24" Margin="12,4,-5,4" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <!--postal-->
-            <TextBox x:Name="txtBoxPostal" Grid.Column="1" Height="24" Margin="12,4,-5,4" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Label Content="Postal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Margin="0" Grid.Row="5"/>
-            <!--sex-->
-            <ComboBox x:Name="comboBoxSex" Margin="12,4,-5,4" VerticalAlignment="Center" Width="120" Height="24" Grid.Column="1" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0">
-                <ComboBoxItem Background="{x:Null}" Content="Male" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <ComboBoxItem Background="{x:Null}" Content="Female" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </ComboBox>
-            <Label Content="Sex" Margin="0" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,-3,0"/>
-            <!--button-->
-            <Button x:Name="btnAddPage" Content="Add" Margin="12,4,-5,4" VerticalAlignment="Center" Width="120" Click="btnAddPage_Click" Height="24" Grid.Row="8" Grid.Column="1" Padding="0"/>
-            <!--house-->
-            <Label Content="House number" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <TextBox x:Name="txtBoxHouse" Height="24" Margin="12,4,-5,4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
-        </Grid>
 
 
     </Grid>
