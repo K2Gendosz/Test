@@ -26,68 +26,10 @@ namespace Test
             InitializeComponent();
         }
 
-        //private void btnAddPage_Click(object sender, RoutedEventArgs e)
-        //{
-        //    bool ageRedy = false;
-        //    bool txtBoxRedy = false;
-        //    bool sexRedy = false;
-        //    int tmpAge;
-        //    string var = Age.Text;
-
-        //    if (!int.TryParse(var, out tmpAge) || tmpAge <= 0 || tmpAge > 100)  // warunek zmieniłem nie przepuszczał przy age == 20 nwm może ten && blokował
-        //    {
-        //        textBoxInvalid(Age);
-        //        ageRedy = false;
-        //    }
-        //    else
-        //    {
-        //        textboxValid(Age);
-        //        ageRedy = true;
-        //    }
-
-        //    if (checkIfNull(FirstName) || checkIfNull(SecondName) || checkIfNull(City)
-        //        || checkIfNull(Street) || checkIfNull(Postal) || checkIfNull(HouseNumber))
-        //    {
-        //        MessageBox.Show("Invalid values in red colored boxes");
-        //        txtBoxRedy = false;
-        //    }
-        //    else txtBoxRedy = true;
-
-        //    if (string.IsNullOrEmpty(comboBox.Text))
-        //    {
-        //        MessageBox.Show("Please select sex");
-        //        sexRedy = false;
-        //    }
-        //    else sexRedy = true;
-
-        //    if (sexRedy && ageRedy && txtBoxRedy)
-        //    {
-        //        string name = FirstName.Text;
-        //        string surname = SecondName.Text;
-        //        string city = City.Text;
-        //        string postal = Postal.Text;
-        //        string street = Street.Text;
-        //        string sex = comboBox.Text;
-        //        string houseNumber = HouseNumber.Text;
-        //        int age = int.Parse(Age.Text);
-
-        //        Model.Subscriber subscriber = new Model.Subscriber(name, surname, sex, city, postal, street, houseNumber, age);
-        //        MainWindow.AddToList(subscriber);
-        //        //Model.Manager.AddSubToList(subscriber);
-
-        //        //Prostsze czyszczenie textboxow
-        //        //foreach(Control ctl in formContainer.Children)
-        //        //{
-        //        //    if (ctl.GetType() == typeof(TextBox))
-        //        //        ((TextBox)ctl).Text = string.Empty;
-        //        //}
-        //        //comboBoxSex.SelectedIndex = -1;
-        //    }
-        //}
-
         private void textBoxInvalid(TextBox txtBox)
         {
-            txtBox.Text = "Invalid Value";
+            txtBox.Text = txtBox.Name;
+            txtBox.Foreground = Brushes.Black;
             txtBox.Background = Brushes.Red;
         }
 
@@ -125,45 +67,14 @@ namespace Test
             {
                 (sender as TextBox).Foreground = new SolidColorBrush(Color.FromRgb(128, 128, 128));
                 (sender as TextBox).Text = (sender as TextBox).Name;
-               
+
             }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            bool ageRedy = false;
-            bool txtBoxRedy = false;
-            bool sexRedy = false;
-            int tmpAge;
-            string var = Age.Text;
 
-            if (!int.TryParse(var, out tmpAge) || tmpAge <= 0 || tmpAge > 100)  // warunek zmieniłem nie przepuszczał przy age == 20 nwm może ten && blokował
-            {
-                textBoxInvalid(Age);
-                ageRedy = false;
-            }
-            else
-            {
-                textboxValid(Age);
-                ageRedy = true;
-            }
-
-            if (checkIfNull(FirstName) || checkIfNull(SecondName) || checkIfNull(City)
-                || checkIfNull(Street) || checkIfNull(Postal) || checkIfNull(HouseNumber))
-            {
-                MessageBox.Show("Invalid values in red colored boxes");
-                txtBoxRedy = false;
-            }
-            else txtBoxRedy = true;
-
-            if (string.IsNullOrEmpty(comboBox.Text))
-            {
-                MessageBox.Show("Please select sex");
-                sexRedy = false;
-            }
-            else sexRedy = true;
-
-            if (sexRedy && ageRedy && txtBoxRedy)
+            if (validateForm())
             {
                 string name = FirstName.Text;
                 string surname = SecondName.Text;
@@ -178,6 +89,46 @@ namespace Test
                 MainWindow.AddToList(subscriber);
                 MainWindow.BackToList();
             }
+        }
+
+        private bool validateForm()
+        {
+            bool isValidated = true;
+            int age = 0;
+            if (!int.TryParse(Age.Text, out age) || age < 0 || age > 100)
+            {
+                textBoxInvalid(Age);
+                isValidated = false;
+            }
+            else
+            {
+                textboxValid(Age);
+            }
+            if (!validateTextBox()) isValidated = false;
+
+            return isValidated;
+        }
+
+        private bool validateTextBox()
+        {
+            bool isValidated = true;
+            
+            
+            foreach(Control addGrid in AddGrid.Children)
+            {
+                if(addGrid.GetType() == typeof(TextBox))
+                {
+                    if (((TextBox)addGrid).Text == ((TextBox)addGrid).Name || checkIfNull(((TextBox)addGrid)))
+                    {
+                        textBoxInvalid(((TextBox)addGrid));
+                        isValidated = false;
+                    }
+                    else textboxValid(((TextBox)addGrid));
+                }
+            }
+
+            return isValidated;
+
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

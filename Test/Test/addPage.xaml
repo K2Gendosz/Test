@@ -8,7 +8,7 @@
       d:DesignHeight="407" d:DesignWidth="798"
       Title="addPage">
 
-    <Grid Background="White">
+    <Grid Background="White" x:Name="AddGrid">
         <Label x:Name="PersonalLb" Content="Personal info : " HorizontalAlignment="Left" Margin="235,101,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="FirstName" Text="FirstName" HorizontalAlignment="Left" Height="23" Margin="234,132,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
         <TextBox x:Name="SecondName" Text="SecondName" HorizontalAlignment="Left" Height="23" Margin="234,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBoxLostFocus" Foreground="Gray"/>
