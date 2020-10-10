@@ -8,7 +8,7 @@ namespace Test.Model
 {
     public class Manager
     {
-        List<Subscriber> SubscribersList = new List<Subscriber>();
+       private List<Subscriber> SubscribersList = new List<Subscriber>();
        
 
         public void AddSubToList(Subscriber Obj)
@@ -54,7 +54,7 @@ namespace Test.Model
                     else if (item.SecondName.ToUpper().Contains(text.ToUpper()))
                     {
                         FoundSubs.Add(item);
-                        continue;
+                        continue;           
                     }
 
                     else if (item.City.ToUpper().Contains(text.ToUpper()))
