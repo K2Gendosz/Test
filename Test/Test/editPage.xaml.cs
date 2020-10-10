@@ -68,13 +68,11 @@ namespace Test
 
             if (int.TryParse(Age.Text,out age))
             {
-
-           
                 foreach (Control tbForm in container.Children)
                 {
                     if (tbForm.GetType() == typeof(TextBox))
                     {
-                        if (string.IsNullOrEmpty(((TextBox)tbForm).Text))
+                        if (string.IsNullOrEmpty(((TextBox)tbForm).Text) || ((TextBox)tbForm).Text == ((TextBox)tbForm).Name)
                         {
                             ((TextBox)tbForm).Background = Brushes.Red;
                             isValidated = false;
