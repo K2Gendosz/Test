@@ -100,10 +100,8 @@ namespace Test
                 textBoxInvalid(Age);
                 isValidated = false;
             }
-            else
-            {
-                textboxValid(Age);
-            }
+            else textboxValid(Age);
+
             if (!validateTextBox()) isValidated = false;
 
             return isValidated;
@@ -112,11 +110,11 @@ namespace Test
         private bool validateTextBox()
         {
             bool isValidated = true;
-            
-            
-            foreach(Control addGrid in AddGrid.Children)
+
+
+            foreach (Control addGrid in AddGrid.Children)
             {
-                if(addGrid.GetType() == typeof(TextBox))
+                if (addGrid.GetType() == typeof(TextBox))
                 {
                     if (((TextBox)addGrid).Text == ((TextBox)addGrid).Name || checkIfNull(((TextBox)addGrid)))
                     {
